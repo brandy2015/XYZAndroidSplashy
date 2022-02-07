@@ -1,4 +1,4 @@
-package com.zhangqian.xyzsplashy
+//package com.xyztech.xyzandroidsplashy
 
 import android.content.pm.ApplicationInfo
 import android.graphics.Color
@@ -12,9 +12,13 @@ import android.view.View
 import android.view.WindowManager
 import android.view.animation.*
 import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_splashy.*
+import com.xyztech.xyzandroidsplashy.R
+import com.xyztech.xyzandroidsplashy.Splashy
 
 
 class SplashyActivity : AppCompatActivity() {
@@ -97,11 +101,24 @@ class SplashyActivity : AppCompatActivity() {
     var progressVisible = false
 
 
+
+    val ivLogo = findViewById<ImageView>( R.id.ivLogo)
+    val tvTitle = findViewById<TextView>( R.id.tvTitle)
+
+    val tvSubTitle = findViewById<TextView>( R.id.tvSubTitle)
+    val pbLoad = findViewById<ProgressBar>( R.id.pbLoad)
+    val rlMain = findViewById<ConstraintLayout>( R.id.rlMain)
+
+    val ivBackground = findViewById<ImageView>( R.id.ivBackground)
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(R.style.SplashyTheme)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splashy)
         activity = this
+
+
 
 
         setLogo()
@@ -133,7 +150,9 @@ class SplashyActivity : AppCompatActivity() {
         val applicationInfo: ApplicationInfo = applicationInfo
 
         if (intent.hasExtra(SHOW_LOGO)) {
-            if (!intent.getBooleanExtra(SHOW_LOGO, true)) ivLogo.visibility = View.GONE
+            if (!intent.getBooleanExtra(SHOW_LOGO, true))
+
+                ivLogo.visibility = View.GONE
         }
 
 

@@ -1,8 +1,10 @@
-package com.zhangqian.xyzsplashy
+package com.xyztech.xyzandroidsplashy
 
+import SplashyActivity
 import android.app.Activity
 import android.content.Intent
 import android.widget.ImageView
+
 
 class Splashy(private var activity: Activity) {
 
